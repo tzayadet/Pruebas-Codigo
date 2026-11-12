@@ -1,5 +1,7 @@
 # Pruebas de código
 
+[![Python checks](https://github.com/tzayadet/Pruebas-Codigo/actions/workflows/python-checks.yml/badge.svg)](https://github.com/tzayadet/Pruebas-Codigo/actions/workflows/python-checks.yml)
+
 Colección pequeña de ejercicios de Python. El repositorio conserva ejemplos de programación básica y transformaciones de texto con fines didácticos.
 
 ## Scripts
