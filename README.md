@@ -51,3 +51,9 @@ python -m unittest discover -s tests -v
 - Manipulación de cadenas
 - Aritmética modular
 - Pruebas con `unittest`
+
+## Project showcase
+
+[Open the GitHub Pages showcase](https://tzayadet.github.io/Pruebas-Codigo/) · [Showcase source](docs/index.html)
+
+The page is a catalogue of source files, not an online code runner. To publish it, select **Settings → Pages → Build and deployment → Source → GitHub Actions** and set the repository Actions variable `ENABLE_PAGES=true` under **Settings → Secrets and variables → Actions → Variables**. The workflow remains skipped until that variable is enabled.
