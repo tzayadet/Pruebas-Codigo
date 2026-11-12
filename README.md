@@ -1,30 +1,51 @@
 # Pruebas de código
 
-Pequeño repositorio de ejercicios y experimentos iniciales en Python.
+Colección pequeña de ejercicios de Python. El repositorio conserva ejemplos de programación básica y transformaciones de texto con fines didácticos.
 
-## Contenido
+## Scripts
 
-- **Decodificador Sistema 1**: menú interactivo para descodificar texto mediante un desplazamiento de caracteres.
-- **codificador**: implementación de dos métodos sencillos de codificación y descodificación.
-- **Proyecto calculadora basica**: calculadora por consola con operaciones aritméticas elementales.
-- **convertexe**: archivo auxiliar relacionado con la conversión de scripts a ejecutables.
+| Archivo | Descripción |
+|---|---|
+| `calculadora_basica.py` | Calculadora de consola con suma, resta, multiplicación y división. |
+| `codificador.py` | Cifrado César (+3) y sustitución afín reversible, con conservación de mayúsculas y signos. |
+| `decodificador_sistema_1.py` | Interfaz independiente para descodificar el ejemplo César (+3). |
+| `build_exe.bat` | Compila un script Python a ejecutable Windows mediante PyInstaller. |
 
 ## Ejecución
 
-Los ejercicios Python pueden ejecutarse con Python 3:
+Requisito: Python 3.10 o superior.
 
 ```bash
-python "Proyecto calculadora basica.py"
-python "Decodificador Sistema 1.py"
+python calculadora_basica.py
 python codificador.py
+python decodificador_sistema_1.py
 ```
 
-## Alcance
+Para generar un ejecutable en Windows, instala PyInstaller y pasa el script como argumento:
 
-Son ejercicios didácticos, no herramientas criptográficas. Los métodos de sustitución incluidos no proporcionan confidencialidad ni deben utilizarse para proteger información real.
+```powershell
+py -m pip install pyinstaller
+.\build_exe.bat calculadora_basica.py
+```
+
+El resultado se guarda en `dist/`.
+
+## Sobre los métodos de sustitución
+
+Los métodos César y afín son ejercicios clásicos de criptografía histórica. Son vulnerables y **no proporcionan confidencialidad**. No deben utilizarse para proteger contraseñas, comunicaciones ni información real.
+
+El segundo método utiliza una transformación afín con multiplicador 5, cuyo inverso modular es 21 en módulo 26. Se evita el multiplicador 2 del ejercicio anterior porque no tiene inverso modular módulo 26 y, por tanto, no permite descodificar todos los caracteres.
+
+## Pruebas
+
+```bash
+python -m unittest discover -s tests -v
+```
 
 ## Tecnologías
 
-- Python
-- Entrada/salida por consola
-- Operaciones con cadenas y caracteres
+- Python estándar
+- Funciones, bucles y control de flujo
+- Manipulación de cadenas
+- Aritmética modular
+- Pruebas con `unittest`
