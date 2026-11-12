@@ -49,7 +49,7 @@ class CipherTests(unittest.TestCase):
         self.assertEqual(decode_system_2(encode_system_2(message)), message)
 
     def test_affine_known_value(self):
-        self.assertEqual(encode_system_2("ABC"), "IMT")
+        self.assertEqual(encode_system_2("ABC"), "INS")
 
     def test_empty_text_is_supported(self):
         self.assertEqual(encode_system_1(""), "")
